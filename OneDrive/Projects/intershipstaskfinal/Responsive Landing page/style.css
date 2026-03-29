@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HERO */
+.hero-section {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(10,5,30,0.85), rgba(10,5,30,0.85)),
+    url("https://media.istockphoto.com/id/2202035083/photo/photo-of-crazy-party-girl-hold-wineglass-enjoy-entertainment-night-wear-fancy-striped-dress.jpg?s=612x612&w=0&k=20&c=L4-GOW205jDqAadbT8p-JDk4nADghuX376_qSmBanJQ=") center/cover no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+/* SECTION TITLES */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+
+/* OCCASION SECTION */
+.occasion-section {
+  padding: 80px 0;
+  background: #f7f7fb;
+}
+
+.occasion-card {
+  height: 200px;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.occasion-card:hover {
+  transform: translateY(-10px);
+}
+
+.occasion-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.occasion-card span {
+  position: relative;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+/* BACKGROUND IMAGES */
+.birthday {
+  background: url("images/birthday.jpg") center/cover no-repeat;
+}
+.wedding {
+  background: url("images/wedding.jpg") center/cover no-repeat;
+}
+.date {
+  background: url("images/date.jpg") center/cover no-repeat;
+}
+.party {
+  background: url("images/party.jpg") center/cover no-repeat;
+}
+
+/* DRESS SECTION */
+.dress-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.dress-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.dress-card:hover {
+  transform: translateY(-10px);
+}
+
+.dress-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.dress-info {
+  padding: 20px;
+}
+
+.dress-info h5 {
+  font-weight: 600;
+}
+
+.price {
+  color: #ff6f91;
+  font-weight: 700;
+}
+
+.rent-btn {
+  margin-top: 10px;
+  background: #ffb6c1;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  padding: 90px 0;
+  background: linear-gradient(
+      rgba(12,5,33,0.92),
+      rgba(12,5,33,0.92)
+    ),
+    url("images/contact-bg.jpg") center/cover no-repeat;
+  color: white;
+}
+
+.contact-text {
+  font-size: 1.05rem;
+  margin: 15px 0 25px;
+  color: #e0e0e0;
+}
+
+.contact-details p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #25d366;
+  color: white;
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* RIGHT CARD */
+.contact-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(8px);
+}
+
+.contact-card h4 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.contact-card ul {
+  padding-left: 18px;
+}
+
+.contact-card li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}

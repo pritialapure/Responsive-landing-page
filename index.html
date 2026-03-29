@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RentGlam | Western Dress Rental</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand font-weight-bold" href="#">RentGlam</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#occasions">Occasions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dresses">Dresses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero-content">
+    <h1>Luxury Western Dresses on Rent</h1>
+    <p>Party • Birthday • Wedding • Date Night  
+      <br>Look stunning without buying expensive outfits
+    </p>
+    <a href="#dresses" class="btn btn-outline-light">Explore Collection</a>
+  </div>
+</section>
+
+<!-- OCCASIONS -->
+<!-- OCCASIONS -->
+<section id="occasions" class="occasion-section">
+  <div class="container text-center">
+    <h2 class="section-title">Choose Your Occasion</h2>
+
+    <div class="row mt-4">
+      <div class="col-md-3 col-6">
+        <div class="occasion-card birthday" onclick="showDresses('birthday')">
+          <span>Birthday</span>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="occasion-card wedding" onclick="showDresses('wedding')">
+          <span>Wedding</span>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="occasion-card date" onclick="showDresses('date')">
+          <span>Date Night</span>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+        <div class="occasion-card party" onclick="showDresses('party')">
+          <span>Party</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRESSES -->
+<section id="dresses" class="dress-section">
+  <div class="container text-center">
+    <h2 class="section-title">Recommended Dresses</h2>
+    <p id="dressTitle" class="section-subtitle">
+      Select an occasion to explore dresses
+    </p>
+
+    <div class="row" id="dressContainer"></div>
+  </div>
+</section>
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT -->
+      <div class="col-md-6 mb-4">
+        <h2 class="section-title text-white">Let’s Get You Styled ✨</h2>
+        <p class="contact-text">
+          Found a dress you love?  
+          Message us on WhatsApp to check availability, pricing & pickup.
+        </p>
+
+        <div class="contact-details">
+          <p><strong>📍 Address:</strong> Pimpri-Chinchwad, Pune</p>
+          <p><strong>⏰ Timings:</strong> 10 AM – 8 PM</p>
+          <p><strong>📞 Phone:</strong> +91 9XXXXXXXXX</p>
+        </div>
+
+        <a
+          href="https://wa.me/919XXXXXXXXX"
+          target="_blank"
+          class="whatsapp-btn"
+        >
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-md-6">
+        <div class="contact-card">
+          <h4>How Renting Works</h4>
+          <ul>
+            <li>✔ Browse dresses by occasion</li>
+            <li>✔ Message us on WhatsApp</li>
+            <li>✔ Confirm date & size</li>
+            <li>✔ Pickup & return easily</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+const dressData = {
+  birthday: [
+    { name: "Pink Bodycon Dress", price: "₹499 / day", img: "images/bday1.jpg" },
+    { name: "Floral Mini Dress", price: "₹549 / day", img: "images/bday2.jpg" },
+    { name: "Shimmer Party Dress", price: "₹599 / day", img: "images/bday3.jpg" }
+  ],
+  wedding: [
+    { name: "Luxury Satin Gown", price: "₹999 / day", img: "images/wed1.jpg" },
+    { name: "Embellished Maxi", price: "₹899 / day", img: "images/wed2.jpg" },
+    { name: "Designer Evening Gown", price: "₹949 / day", img: "images/wed3.jpg" }
+  ],
+  date: [
+    { name: "Red Slip Dress", price: "₹499 / day", img: "images/date1.jpg" },
+    { name: "Black Midi Dress", price: "₹549 / day", img: "images/date2.jpg" },
+    { name: "Soft Pastel Dress", price: "₹499 / day", img: "images/date3.jpg" }
+  ],
+  party: [
+    { name: "Sequin Mini Dress", price: "₹699 / day", img: "images/party1.jpg" },
+    { name: "Metallic Party Dress", price: "₹749 / day", img: "images/party2.jpg" },
+    { name: "Bold Cutout Dress", price: "₹799 / day", img: "images/party3.jpg" }
+  ]
+};
+
+function showDresses(type) {
+  const container = document.getElementById("dressContainer");
+  const title = document.getElementById("dressTitle");
+
+  container.innerHTML = "";
+  title.innerText = `Perfect dresses for ${type.charAt(0).toUpperCase() + type.slice(1)}`;
+
+  dressData[type].forEach(dress => {
+    container.innerHTML += `
+      <div class="col-md-4 mb-4">
+        <div class="dress-card">
+          <img src="${dress.img}" alt="${dress.name}">
+          <div class="dress-info">
+            <h5>${dress.name}</h5>
+            <p class="price">${dress.price}</p>
+            <button class="rent-btn">Rent Now</button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById("dresses").scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
